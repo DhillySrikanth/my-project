@@ -1,0 +1,75 @@
+
+body {
+    background-color: #0e0e0e;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+ 
+  .outer-container {
+    background-color:lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 440px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+ 
+  .inner-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    padding: 30px 25px;
+    width: 300px;
+    text-align: center;
+  }
+  
+ 
+  .balance {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4b7047;
+    margin-bottom: 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deposit {
+    background-color: #61b15a;
+  }
+  
+  .deposit:hover {
+    background-color: #4a8b44;
+  }
+  
+  .withdraw {
+    background-color: #e34b4b;
+  }
+  
+  .withdraw:hover {
+    background-color: #bb3a3a;
+  }
+
