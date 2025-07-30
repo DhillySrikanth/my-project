@@ -1,10 +1,10 @@
-# 💰 Responsive Banking UI
+#  Responsive Banking UI
 
 This is a simple and clean **Responsive Banking UI** built using HTML and CSS. It displays a balance section and two action buttons: **Deposit** and **Withdraw**. The layout is centered and styled to look like a modern, card-based interface.
 
 ---
 
-## 📌 Features
+##  Features
 
 - Clean and minimal UI
 - Card-style layout
@@ -14,7 +14,7 @@ This is a simple and clean **Responsive Banking UI** built using HTML and CSS. I
 
 ---
 
-## 🚀 Steps Followed to Build This Project
+##  Steps Followed to Build This Project
 
 1. **Created the basic HTML structure**
    - Used `<!DOCTYPE html>` and included all necessary tags (`<html>`, `<head>`, `<body>`).
