@@ -1,0 +1,41 @@
+What I Did to Make My Simple Banking UI
+
+1. Planned What I Wanted
+I decided to make a simple banking page that shows a balance (starting at $0) and has two buttons: Deposit and Withdraw. 
+The design should be neat, centered on the screen, and easy to understand for beginners.
+
+2. Created My Project Files
+I made two files: one for the HTML (the structure) and one for the CSS (the styling). 
+I named them index.html and style.css.
+
+3. Wrote the HTML Structure
+- I made a main container (outer-container) to help center everything on the page.
+- Inside that, I added another container (inner-container) which acts like the white card you see.
+- Inside that card, I put a place to show the balance ($0).
+- Below that, I added two buttons stacked vertically: a green Deposit button and a red Withdraw button.
+
+4. Connected the CSS File
+I linked my stylesheet (style.css) inside the HTML so that when the page loads, it uses the styles I wrote.
+
+5. Styled the Page with CSS
+- I made the background of the whole page dark, so the white card stands out.
+- Used flexbox to center the card perfectly in the middle of the screen.
+- Gave the card a white background with rounded corners and a slight shadow to make it look like a real card.
+- Made the balance text bigger and green-ish to catch the eye.
+- Stacked the buttons vertically with some space between them.
+- Made the buttons fill the card’s width, gave them rounded corners, and made the Deposit button green and the Withdraw button red.
+
+6. Added Button Hover Effects
+When you move your mouse over the buttons, their colors get a bit darker, so it looks like they’re clickable.
+
+7. Final Touches
+- Set smooth transitions so that the color changes don’t happen abruptly.
+- Used a simple, readable font to make everything clear.
+- Adjusted spacing to keep the design balanced and clean.
+
+8. What’s Next (for Later)
+I thought about making the design work well on smaller devices and adding code so the buttons really interact with the balance (like increasing or decreasing it). 
+But for now, the focus was just on making the UI look good 
+
+Basically, I planned my layout, built the structure using HTML, styled everything with CSS to look nice and centered, 
+and made sure buttons have nice colors and hover effects to look interactive. 
