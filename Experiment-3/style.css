@@ -1,0 +1,42 @@
+body{
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+header{
+    background-color: #b0a5a5;
+    grid-column: 1/span 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+aside{
+    background-color: rgb(206, 179, 179);
+    grid-row: 2/span 3;
+    padding-top: 20px;
+    padding-left: 15px;
+    height: 630px;
+    width: 350px;
+
+}
+
+main{
+    padding: 14px;
+}
+footer{
+    grid-area: footer;
+    grid-column: 2/span 3;
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
