@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .container {
+    border: 1px solid black;
+    padding: 15px;
+    width: 400px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select {
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
