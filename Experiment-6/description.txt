@@ -1,0 +1,28 @@
+Experiment 6 : SVG Drawing Tool
+
+In this experiment, I made a small drawing tool using an SVG element. The SVG acts like a canvas where the user can draw freehand lines using their mouse.
+
+In the HTML, 
+I created an <svg> element inside a container. This is the main drawing area where users can sketch.
+I also added a heading for the title and my name below it.
+
+In the CSS, 
+I styled the page to look clean and balanced. The SVG was given a fixed width and height, a border, and a light background color. 
+I also changed the cursor to a crosshair so it feels like a drawing application. The container was centered with some padding and borders.
+
+In the JavaScript, 
+I used mouse events to make drawing possible:
+1. When the user presses the mouse button (mousedown), a new SVG path is created and drawing starts from that point.
+2. As the user moves the mouse (mousemove), line segments are continuously added to the path, giving the effect of freehand drawing.
+3. When the user releases the mouse (mouseup), the current path is completed and stored in the SVG.
+
+To create each stroke, I used createElementNS for making a new <path> element inside SVG, and updated its d attribute with the current mouse coordinates. 
+Each line is styled in blue color, has a stroke width of 2px, and no fill.
+
+So basically, the whole logic works like this:
+Mouse Down : Start drawing a new path
+Mouse Move : Add line segments to the path
+Mouse Up : Stop drawing and save the path
+
+Overall, this experiment helped me understand how SVG elements, event listeners, 
+and DOM manipulation work together to create an interactive drawing tool inside a web page.
