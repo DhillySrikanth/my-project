@@ -1,0 +1,26 @@
+Experiment 8 : Library Management Component
+
+In this experiment, I built a LibraryManagement component to manage and display a collection of books. 
+This helped me practice component state management, list rendering, and handling user interactions in React.
+
+In the JSX,
+I defined a LibraryManagement component that maintains an array of book objects (title and author) in state.
+The component renders the list of books, provides a simple form to add new books, and includes buttons to remove entries.
+Each book item is rendered with a key and uses child components (if any) to keep the UI modular and reusable.
+
+In the CSS,
+I styled the library list with clear spacing, borders for each book row, and a compact form layout.
+Buttons have consistent sizing and hover states. The layout uses flexbox to align controls and book details for a clean, readable list.
+
+In the JavaScript (React),
+I used useState to hold the books array and controlled inputs for the add-book form.
+Event handlers add and remove books by updating state immutably (e.g., setBooks([...books, newBook]) and setBooks(books.filter(...))).
+The component demonstrates conditional rendering when the list is empty and basic form validation (non-empty title/author).
+
+So basically, the whole logic works like this:
+- LibraryManagement holds the books array in component state.
+- The UI maps over the array and renders each book as a list item or child component.
+- The add form appends a new book to state; remove buttons filter out a book from state.
+- UI updates automatically reflect the current state without page reloads.
+
+Overall, this experiment reinforced how to manage array state in React, handle form input and events, and structure a small, interactive CRUD-like UI
