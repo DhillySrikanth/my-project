@@ -1,87 +1,66 @@
-import React, { useState } from "react";
-import "./App.css";
-import { Student, Teacher } from "../script.js";
+import { useState } from "react";
+import { Student, Teacher } from "./components/Person";
+import "./App.css"; // Make sure to import the CSS file
 
 function App() {
-  const [showScriptCode, setShowScriptCode] = useState(false);
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [course, setCourse] = useState("");
 
-  const scriptJsCode = `export class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+  const [students, setStudents] = useState([
+    new Student("Srikanth", 20, "AIML"),
+    new Student("Kartik", 22, "Cyber"),
+    new Student("Sreekar", 19, "AIDS"),
+  ]);
 
-  displayInfo() {
-    return \`Name: \${this.name}, Age: \${this.age}\`;
-  }
-}
+  const addStudent = () => {
+    if (name && age && course) {
+      const newStudent = new Student(name, age, course);
+      setStudents([...students, newStudent]);
+      setName("");
+      setAge("");
+      setCourse("");
+    }
+  };
 
-export class Student extends Person {
-  constructor(name, age, course) {
-    super(name, age);
-    this.course = course;
-  }
-
-  displayInfo() {
-    return \`Name: \${this.name}, Age: \${this.age}, Course: \${this.course}\`;
-  }
-}
-
-export class Teacher extends Person {
-  constructor(name, age, subject) {
-    super(name, age);
-    this.subject = subject;
-  }
-
-  displayInfo() {
-    return \`Name: \${this.name}, Age: \${this.age}, Subject: \${this.subject}\`;
-  }
-}
-
-const student1 = new Student("Kartik", 19, "Computer Science");
-console.log(student1.displayInfo());
-
-const teacher1 = new Teacher("Dr. Sharma", 45, "Artificial Intelligence");
-console.log(teacher1.displayInfo());`;
-
-  const student = new Student("Kartik", 19, "Computer Science");
-  const teacher = new Teacher("Dr. Sharma", 45, "Artificial Intelligence");
+  const teacher = new Teacher("Harbindher", 40, "Full Stack");
 
   return (
-    <div className="container">
-      <h1>Inheritance Demo</h1>
-      <p>{student.displayInfo()}</p>
-      <p>{teacher.displayInfo()}</p>
+    <div className="card"> {/* This div is centered by CSS */}
+      <h1>Person Class Hierarchy</h1>
 
-      <button
-        onClick={() => setShowScriptCode((prev) => !prev)}
-        style={{
-          marginTop: "12px",
-          padding: "6px 14px",
-          cursor: "pointer",
-          background: "#007bff",
-          color: "#fff",
-          border: "none",
-          borderRadius: "4px"
-        }}
-      >
-        {showScriptCode ? "Hide script.js Code" : "Show script.js Code"}
-      </button>
+      <h2>Teacher Example</h2>
+      <p>{teacher.getInfo()}</p>
 
-      {showScriptCode && (
-        <pre
-          style={{
-            marginTop: "10px",
-            background: "#f5f5f5",
-            border: "1px solid #ddd",
-            padding: "10px",
-            borderRadius: "6px",
-            overflowX: "auto"
-          }}
-        >
-          {scriptJsCode}
-        </pre>
-      )}
+      <h2>Add Student</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Course"
+          value={course}
+          onChange={(e) => setCourse(e.target.value)}
+        />
+        <button onClick={addStudent}>Add Student</button>
+      </div>
+
+      <h2>Student List</h2>
+      <ul>
+        {students.map((student, index) => (
+          <li key={index}>{student.getInfo()}</li>
+        ))}
+      </ul>
     </div>
   );
 }

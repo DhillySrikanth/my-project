@@ -1,50 +1,100 @@
-.container {
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+body {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;    /* Vertical centering */
+  background-color: #1c1c1c; /* Dark background */
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+
+.app-container {
+  background-color: #2b2b2b; /* Slightly lighter dark gray for the card */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* A clear, dark shadow */
+  max-width: 700px;
+  width: 90%;
+  text-align: left;
+}
+
+/* Headings */
 h1 {
-  font-size: 22px;
-  margin-bottom: 15px;
   text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
 }
 
 h2 {
-  font-size: 18px;
-  margin-top: 15px;
-  color: #333;
+  font-size: 1.5rem;
+  color: #bb86fc; /* A pop of color for the headings */
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
-ul {
-  margin-left: 20px;
+p {
+  color: #b0b0b0;
 }
 
-pre {
-  background: #f4f4f4;
+/* Form and inputs */
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  flex-grow: 1;
   padding: 10px;
-  border-radius: 6px;
-  font-size: 14px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #383838;
+  color: #e0e0e0;
 }
 
-.toggle-code-btn {
-  margin-top: 16px;
-  padding: 8px 16px;
-  font-size: 1rem;
+input::placeholder {
+  color: #888;
+}
+
+/* Button */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #03dac6; /* A contrasting color */
+  color: #000;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.code-block {
-  margin-top: 12px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  padding: 12px;
-  font-family: 'Fira Mono', 'Consolas', monospace;
-  font-size: 0.95rem;
-  white-space: pre;
+button:hover {
+  background-color: #018786;
+}
+
+/* Student list */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #383838;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-left: 4px solid #03dac6;
+  border-radius: 5px;
 }

@@ -1,0 +1,35 @@
+Experiment 9 : Person Class Hierarchy with Student and Teacher Subclasses
+
+In this experiment, I implemented an ES6 class hierarchy (Person, Student, Teacher) and demonstrated usage inside a React component.
+This helped me practice object-oriented concepts (inheritance and method overriding) together with React state and rendering.
+
+In the JSX,
+I created a React App component that imports Student and Teacher classes from src/components/Person.
+The App renders a Teacher example and a dynamic Student list. A form with controlled inputs lets the user add Student instances at runtime. 
+The students array is stored in component state and rendered by mapping to list items.
+
+In the CSS,
+I applied a centered card layout and simple styles for headings, inputs, buttons, and the list so the UI is clear and readable.
+Styling keeps the form and list compact and accessible.
+
+In the JavaScript (React),
+I defined a base Person class with name and age and methods to return basic info.
+Student and Teacher extend Person, adding course/subject and overriding/adding methods (e.g., getInfo/getRoleInfo) to return full details.
+The App component demonstrates:
+- creating class instances (new Teacher, new Student)
+- storing instances in state (students array)
+- adding new Student instances immutably (setStudents([...students, newStudent]))
+- rendering instance data via class methods (student.getInfo())
+
+So basically, the whole logic works like this:
+- Person is the base class; Student and Teacher extend it with role-specific properties and methods.
+- App creates a Teacher instance and maintains a list of Student instances in state.
+- The add form constructs a new Student and appends it to state; the UI re-renders automatically.
+
+Key files:
+- src/App.jsx (entry UI demonstrating classes)
+- src/components/Person.jsx (Person, Student, Teacher class definitions)
+- src/App.css (styles for layout and controls)
+
+Overall, this experiment reinforced how to model inheritance in modern JavaScript classes and 
+how to integrate class-based logic with React state and rendering to build
