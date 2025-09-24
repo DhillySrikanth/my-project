@@ -1,0 +1,32 @@
+Experiment 10 : CLI Employee Management System
+
+In this experiment, I made a small Node.js command-line Employee Management System. The app runs in the terminal and 
+lets the user add, list, and remove employees from an in-memory list using a simple interactive menu.
+
+In the Node.js setup,
+I imported the built-in readline module and created an interface (rl) tied to process.stdin and process.stdout to read user input from the terminal.
+I initialized an in-memory array named employees with a few sample employee objects (name and id).
+
+In the CLI menu,
+I implemented a menu function that prints options to the console:
+1. Add Employee
+2. List Employees
+3. Remove Employee
+4. Exit
+The menu reads the user's choice with rl.question and routes to the appropriate handler using a switch statement.
+
+In the command handlers,
+1. addEmployee: prompts for name and id, then pushes a new object into the employees array and returns to the menu.
+2. listEmployees: displays all employees or a "No employees found" message when the array is empty, then returns to the menu.
+3. removeEmployee: prompts for an employee ID, filters the employees array to remove matching entries, reports success or not found, then returns to the menu.
+4. Exit: closes the readline interface and logs a goodbye message.
+
+To manage state and I/O, I used readline.question for synchronous-style prompting and array operations (push, filter, forEach) to manipulate the in-memory employees list. 
+No persistent storage or external libraries are used, so all data is lost when the process exits.
+
+So basically, the whole logic works like this:
+Start app : Initialize readline, seed employees array, show menu
+Handle choice : Prompt -> run handler -> update or display employees -> show menu (or exit)
+Exit : Close readline and terminate the process
+
+Overall, this experiment helped me understand how Node.js readline, synchronous-style CLI prompts, and basic array operations can be combined to build a simple interactive

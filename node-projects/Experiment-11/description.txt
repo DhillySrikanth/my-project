@@ -1,0 +1,50 @@
+Experiment 11 : Playing Card API 
+In this experiment, I built a simple RESTful API using Node.js and Express.js to manage a collection of playing cards. 
+The API allows clients to retrieve, add, and delete cards from an in-memory list via HTTP requests.
+
+Setup and Middleware:
+- Imported the Express module and initialized an app instance.
+- Server listens on port 3000.
+- Used express.json() middleware to parse incoming JSON payloads from POST requests.
+
+Root Route:
+- Added a root route (GET /) to confirm the API is running.
+- Responds with: "Welcome to the Playing Card API!"
+
+In-Memory Data Store:
+- Created an array named cards containing sample card objects with id, suit, and value.
+- Acts as a temporary data store; all data is lost when the server restarts.
+
+API Endpoints:
+1. GET /cards
+   - Returns the full list of cards in JSON format.
+
+2. GET /cards/:id
+   - Retrieves a single card by its ID.
+   - Returns the card object if found.
+   - Responds with 404 and "Card not found" if not found.
+
+3. POST /cards
+   - Accepts a JSON body with suit and value.
+   - Assigns a unique id using the highest existing ID + 1.
+   - Validates input; returns 400 if suit or value is missing.
+   - On success, adds the card and returns it with a 201 status.
+
+4. DELETE /cards/:id
+   - Removes a card by its ID.
+   - Returns success message and removed card if found.
+   - Responds with 404 and "Card not found" if not found.
+
+Flow Summary:
+- Start server → initialize Express → define routes → handle requests → manipulate in-memory array → respond to client
+- No database or persistent storage is used
+
+Key Concepts Practiced:
+- Express routing and middleware
+- RESTful API design
+- JSON parsing and validation
+- Array operations (find, filter, splice, map)
+- HTTP status codes and error handling
+
+Overall, this experiment helped me understand how to build a basic REST API using Express.js and manage state with in-memory data. 
+It’s a great stepping stone toward building more complex APIs with persistent storage and authentication.

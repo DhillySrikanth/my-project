@@ -1,0 +1,31 @@
+Experiment 12 : Ticket Booking API (Seat Locking)
+
+In this experiment, I built a simple Ticket Booking API using Express.js that demonstrates seat locking and confirmation workflows. 
+The API runs in memory and lets clients view seats, lock a seat temporarily, and confirm a booking within a short timeout.
+
+In the Server Setup,
+I imported Express, created an app, enabled express.json() middleware for JSON request bodies, 
+and set the server to listen on port 3000. Seats are represented by an in-memory object where each seat has a status and a lockedUntil timestamp.
+
+In the Routing & Behavior,
+- GET / : Returns a welcome message for the Ticket Booking API.
+- GET /seats : Returns the current seat states. Before returning, it checks for expired locks (lockedUntil < Date.now()) 
+  and releases any expired locks by marking the seat available again.
+- POST /lock/:id : Attempts to lock a seat for 60 seconds. It validates the seat exists and is not already booked. 
+  If currently locked but expired, it re-locks; if locked and still valid, it returns an error.
+- POST /confirm/:id : Confirms a booking for a seat that is locked and whose lock has not expired. 
+  On success the seat becomes booked and lockedUntil is cleared. Attempts to confirm non-locked or expired locks return an error.
+
+In State & Timeout Handling,
+Seats are stored in-memory with structure { status: 'available'|'locked'|'booked', lockedUntil: timestamp|null }. Lock duration is 60000 ms (1 minute). 
+Expired locks are cleared when listing seats and endpoints check lockedUntil against Date.now(). There is no persistence, so all state is lost when the server restarts.
+
+So basically, the whole logic works like this:
+Start server : Initialize Express, enable JSON parsing, register routes, listen on port 3000
+Lock flow : Client POST /lock/:id -> validate -> set status 'locked' and lockedUntil = now + 60000
+Confirm flow : Client POST /confirm/:id -> if locked and lockedUntil > now -> set status 'booked'
+Expiry check : GET /seats (and endpoint checks) release locks when lockedUntil < now
+Shutdown : Stop the server (no graceful shutdown implemented)
+
+Overall, this experiment helped me understand Express routing, in-memory state management, 
+time-based locks (using timestamps), and simple API validation for a booking
