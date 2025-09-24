@@ -1,4 +1,4 @@
-Experiment 11 : Playing Card API 
+Experiment 11 : Playing Card API (Rest APIs)
 In this experiment, I built a simple RESTful API using Node.js and Express.js to manage a collection of playing cards. 
 The API allows clients to retrieve, add, and delete cards from an in-memory list via HTTP requests.
 
