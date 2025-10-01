@@ -1,0 +1,37 @@
+Experiment: E-commerce Catalog API
+
+In this experiment, I created a small API for managing an e-commerce product catalog using Node.js, Express, and MongoDB. 
+The API allows users to fetch all products, filter products by category or color, and retrieve details of a single product by its ID.
+
+In the HTML,
+I didn’t use a traditional HTML page for this experiment because the focus was on building an API. Instead, 
+all interactions happen via HTTP requests to the API endpoints. 
+However, I ensured that the server responds with meaningful JSON messages for better testing and debugging.
+
+In the CSS,
+Since this is an API project, there was no CSS involved. The focus was on clean and structured JSON responses, 
+which makes it easier to use with frontend applications or tools like Postman.
+
+In the JavaScript,
+I used Node.js and Express to create the server and define routes:
+
+GET /products – Fetches all products from the MongoDB database.
+GET /products/:id – Fetches a single product by its unique ID.
+GET /products/category/:name – Filters products by a specific category.
+GET /products/color/:color – Filters products based on variant color.
+To connect with MongoDB, I used Mongoose as an ODM. I defined a Product schema with fields like name, price, category, 
+and variants. The category field uses an enum to ensure only valid categories are allowed, and each product variant contains color, size, 
+and stock details.
+
+For seeding sample data, I wrote a function that checks if the database is empty and inserts some predefined products. 
+This ensures the API has initial data to work with for testing.
+
+Overall, the whole logic works like this:
+
+Server Start: Connect to MongoDB and seed initial data if necessary.
+API Requests: Users can make HTTP GET requests to fetch products or filter them.
+Database Interaction: Mongoose handles data validation and fetching, ensuring consistent and reliable responses.
+
+Overall, this experiment helped me understand how RESTful APIs, Express routes, MongoDB collections, 
+and Mongoose schemas work together to create a backend service for an e-commerce application. 
+It also reinforced my understanding of HTTP methods, JSON responses, and server-side JavaScript programming.
